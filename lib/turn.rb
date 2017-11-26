@@ -1,5 +1,5 @@
 #Define Empty Board with 9 Spaces
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " ",]
+#board = [" ", " ", " ", " ", " ", " ", " ", " ", " ",]
 
 #Displays the Board in the Tic Tac Toe Grid Format Like So:
 #  |  |
@@ -13,7 +13,7 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-#Take the Number the User Supplies and Subtracts One to == Corresponding Index
+#Take the Number the User Supplies, Converts to Integer, and Subtracts One to == Corresponding Index
 def input_to_index(userinput)
   userinput.to_i - 1
 end
@@ -25,14 +25,15 @@ end
 
 #Checks if Position is Empty Space or Has an X/O Already
 def position_taken?(board, index)
-   if board[index] == " " || board[index] == "" || board[index] == nil
-     false
- else board[index] == "X" || board[index] == "O"
-   true
- end
+  board[index] != " "
 end
 
 #Checks if Move(Input) is Valid Based on If Position is Taken OR Number is in Correct Range. (9 = index of 8)
 def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board,index)
+end
+
+def turn
+  puts "Please enter 1-9"
+  gets.strip
 end
