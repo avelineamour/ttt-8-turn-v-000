@@ -1,4 +1,11 @@
 #!/usr/bin/env ruby
+require_relative '../lib/move.rb'
 
-puts "Welcome to Tic Tac Toe! Please choose a spot on the board by entering a number 1-9, 1 being the top left corner and 5 being the middle spot"
-board[index] = gets.strip
+
+puts "Welcome to Tic Tac Toe!"
+board = [" "," "," "," "," "," "," "," "," "]
+puts "Where would you like to go?"
+input = gets.strip
+index = input_to_index(input)
+move(board, index)
+display_board(board)
