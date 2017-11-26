@@ -1,1 +1,4 @@
 #!/usr/bin/env ruby
+
+puts "Welcome to Tic Tac Toe! Please choose a spot on the board by entering a number 1-9, 1 being the top left corner and 5 being the middle spot"
+board[index] = gets.strip
